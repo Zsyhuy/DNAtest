@@ -2,10 +2,20 @@ import syntaxtree.Node;
 
 public class Main {
     public static void main(String[] args) {
-        String[] files = {"test1.c"};
-        for (String file :
-                files) {
-            System.out.println(Main.genDNA(file));
+        String[] files = {
+                "test1.c",
+                "test2.c",
+                "test3.c"
+        };
+        String[] answer = {
+                "IEZHIEZICIIQIPRI",
+                "IEZHIEZICIIQIPRIARI",
+                "HIEZICIIPWIERIARI"
+        };
+        for (int i = 0; i < files.length; i++) {
+            String file = files[i];
+            String dna = Main.genDNA(file);
+            System.out.printf("%b\t%s\n", dna.equals(answer[i]), dna);
         }
     }
 
@@ -17,8 +27,6 @@ public class Main {
             System.err.println("File " + file + " not found.");
             return null;
         }
-
-//        StringBuilder dna = new StringBuilder();
 
         try {
             Node root = parser.TranslationUnit();

@@ -76,6 +76,11 @@ public class TreeTransformB extends DepthFirstVisitor {
                 this.DNAseq.append("P");
                 this.afterAssignment = true;
                 break;
+            case 65:
+            case 91:
+                // *, +
+                this.DNAseq.append("A");
+                break;
             case 63:
                 // [
                 // 在操作数组
