@@ -1,5 +1,4 @@
 import syntaxtree.Node;
-import visitor.TreeDumper;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,7 +22,10 @@ public class Main {
 
         try {
             Node root = parser.TranslationUnit();
-            root.accept(new TreeDumper());
+//            root.accept(new TreeDumper());
+            TreeTransformB transA = new TreeTransformB();
+            root.accept(transA);
+            return transA.getDNA();
         } catch (ParseException e) {
             System.out.println("Encountered errors during parse.");
             e.printStackTrace();
