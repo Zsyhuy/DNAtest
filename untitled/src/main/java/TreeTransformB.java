@@ -103,8 +103,10 @@ public class TreeTransformB extends DepthFirstVisitor {
                 this.DNAseq.append("I");
                 break;
             case 12:
-                // zero
-                this.DNAseq.append("Z");
+                // 数字
+                if (n.tokenImage.equals("0")) {
+                    this.DNAseq.append("Z");
+                }
                 break;
         }
     }
