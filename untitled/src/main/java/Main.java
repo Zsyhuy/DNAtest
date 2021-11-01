@@ -1,21 +1,17 @@
 import syntaxtree.Node;
+import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        String[] files = {
-                "test1.c",
-                "test2.c",
-                "test3.c"
-        };
-        String[] answer = {
-                "IEZHIEZICIIQIPRI",
-                "IEZHIEZICIIQIPRIARI",
-                "HIEZICIIPWIERIARI"
-        };
-        for (int i = 0; i < files.length; i++) {
-            String file = files[i];
-            String dna = Main.genDNA(file);
-            System.out.printf("%b\t%s\n", dna.equals(answer[i]), dna);
+        HashMap<String, String> test = new HashMap<String, String>();
+        test.put("test1.c", "IEZHIEZICIIQIPRI");
+        test.put("test2.c", "IEZHIEZICIIQIPRIARI");
+        test.put("test3.c", "HIEZICIIPWIERIARI");
+
+        for (String filename : test.keySet()
+        ) {
+            String dna = Main.genDNA(filename);
+            System.out.println(dna.equals(test.get(filename)) + "\t" + dna);
         }
     }
 
