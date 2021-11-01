@@ -3,7 +3,6 @@ import syntaxtree.*;
 
 public class TreeTransformB extends DepthFirstVisitor {
     private StringBuilder DNAseq;
-    //    private boolean findToken;
     private int compoundDepth;  // 记录代码块层数
     private int assignmentDepth; // 标记是否在赋值语句内
     private boolean afterAssignment; // 标记是否在赋值等号前
@@ -41,23 +40,12 @@ public class TreeTransformB extends DepthFirstVisitor {
         this.assignmentDepth--;
     }
 
-    // 比较运算
-//    public void visit(RelationalExpression n) {
-//        this.DNAseq.append("C");
-//        n.f0.accept(this);
-//        n.f1.accept(this);
-//    }
-
     // 检查符号
     public void visit(NodeToken n) {
         if (this.compoundDepth == 0) {
             // 不在代码块内
             return;
         }
-
-//        if (!this.findToken) {
-//            return;
-//        }
 
         switch (n.kind) {
             case 95:
