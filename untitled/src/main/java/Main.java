@@ -20,9 +20,9 @@ public class Main {
     }
 
     public static String genDNA(String file) {
-        CParser parser;
+        Parser parser;
         try {
-            parser = new CParser(new java.io.FileInputStream(file));
+            parser = new Parser(new java.io.FileInputStream(file));
         } catch (java.io.FileNotFoundException e) {
             System.err.println("File " + file + " not found.");
             return null;
