@@ -24,6 +24,5 @@ public class Test {
             System.out.println(dna.equals(test.get(filename)) + "\t" + dna);
         }
 
-        test2 String[]
     }
 }
