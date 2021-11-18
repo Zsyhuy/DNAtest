@@ -16,7 +16,7 @@ public class DNAReq {
         return transA.getDNA();
     }
 
-    public static List genDNA(List<String> fileList) throws ParseException, FileNotFoundException {
+    public static List<String> genDNA(List<String> fileList) throws ParseException, FileNotFoundException {
         ArrayList<String> dnaList = new ArrayList<>(fileList.size());
         for (String file : fileList) {
             dnaList.add(DNAReq.genDNA(file));
