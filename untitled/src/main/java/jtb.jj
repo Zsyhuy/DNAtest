@@ -4,28 +4,29 @@ options {
 
 PARSER_BEGIN(Parser)
 
-import java.util.*;
+import dna.ast.Token;import java.util.*;
 
-  public class Parser{
+public class Parser{
 
-    private static Set types = new HashSet();
+  private static Set types = new HashSet();
 
-    private static Stack typedefParsingStack = new Stack();
+  private static Stack typedefParsingStack = new Stack();
 
-    private static boolean isType(String type){
-   	  return types.contains(type);
-    }
+  private static boolean isType(String type){
+ 	  return types.contains(type);
+  }
 
-    private static void addType(String type){
-   	  types.add(type);
-    }
+  private static void addType(String type){
+ 	  types.add(type);
+  }
 
-    private static void printTypes(){
-      for (Iterator i = types.iterator(); i.hasNext();) {
-        System.out.println(i.next());
-      }
+  private static void printTypes(){
+    for (Iterator i = types.iterator(); i.hasNext();) {
+      System.out.println(i.next());
     }
   }
+}}
+}
 
 PARSER_END(Parser)
 
@@ -244,7 +245,7 @@ void Declarator() : {}
 	[ Pointer() ] DirectDeclarator()
 }
 
-void DirectDeclarator() : { Token t;}
+void DirectDeclarator() : { dna.ast.Token t;}
 {
 	( t = <IDENTIFIER>
 

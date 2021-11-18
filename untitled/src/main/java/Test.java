@@ -1,8 +1,11 @@
+import dna.DNAReq;
+import dna.ast.*;
+
 import java.util.HashMap;
 
 public class Test {
     public static void main(String[] args) {
-        HashMap<String, String> test = new HashMap<String, String>();
+        HashMap<String, String> test = new HashMap<>();
         test.put("test1.c", "IEZHIEZICIIQIPRI");
         test.put("test2.c", "IEZHIEZICIIQIPRIARI");
         test.put("test3.c", "HIEZICIIPWIERIARI");

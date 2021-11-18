@@ -8,7 +8,7 @@ options {
 
 PARSER_BEGIN(Parser)
 import java.util.*;
-import syntaxtree.*;
+import dna.ast.syntaxtree.*;
 import java.util.Vector;
 
 
